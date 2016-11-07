@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style type="text/css">
+        
+        .err-txt {
+            color: red!important;
+        }
+        
+        body {
+            background-image: url(https://lh4.googleusercontent.com/-PSwQeLXLS8c/Vy9GFHpyUCI/AAAAAAAAACA/gqnrJ2mAOHU2GcTwlK6oH-uGcg-1eGJQgCL0B/w1026-h577-no/3px-tile-1920x1080.png);
+            background-size: cover;
+        }
+        
+        header {
+            height: 70px;
+            background-color: #808080;
+        }
+        
+        .main {
+            margin-top: 160px;
+            background-color: white;
+            box-shadow: 0 0 10px #FFFAFA;
+        }
+        
+        .login {
+            font-size: 29px;
+            font-weight: 700;
+            margin-top: 15px
+        }
+        
+        .join {
+            font-size: 13px;
+            color: gray;
+            margin-top: 30px;
+        }
+        
+        .free {
+            color: black;
+        }
+        
+        .form-group {
+            margin-top: 10px
+        }
+        
+        .btn {
+            position: relative;
+            display: inline-block;
+            font-size: 100%;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(to left top, transparent 49.9%, #3D948D 51%, #3D948D 78%, #008080 80%), linear-gradient(to left top, #3D948D 29%, #008080 20%);
+            background-size: 2em 2em;
+        }
+        
+        #name {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 3px;
+            font-size: 100%;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(to left top, transparent 49.9%, #3D948D 51%, #3D948D 78%, #008080 80%), linear-gradient(to left top, #3D948D 29%, #008080 20%);
+            background-repeat: repeat;
+            background-size: 2em 2em;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: 100;
+            box-shadow: 0 0 10px black;
+            left: -10px;
+        }
+        
+        #name:after {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            right: -10px;
+            top: 21%;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 10px solid #3D948D;
+            border-bottom: 10px solid transparent;
+            z-index: 9;
+        }
+        
+        #name:before {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid #3D948D;
+            border-left: 10px solid transparent;
+            left: 0px;
+            top: 32px;
+        }
+        
+        #pass {
+            display: inline-block;
+            height: 100%;
+            position: relative;
+            padding-bottom: 3px;
+            font-size: 100%;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(to left top, transparent 49.9%, #3D948D 51%, #3D948D 78%, #008080 80%), linear-gradient(to left top, #3D948D 29%, #008080 20%);
+            background-repeat: repeat;
+            background-size: 2em 2em;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: 100;
+            box-shadow: 0 0 10px black;
+            left: -10px;
+        }
+        
+        #pass:after {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            right: -10px;
+            top: 21%;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 10px solid #3D948D;
+            border-bottom: 10px solid transparent;
+            z-index: 9;
+        }
+        
+        #pass:before {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid #3D948D;
+            border-left: 10px solid transparent;
+            left: 0px;
+            top: 32px;
+        }
+        
+        .form-control {
+            width: 121%;
+            position: relative;
+            left: -11%;
+            background-color: azure;
+            border-radius: 0px;
+            border-left: none !important;
+            box-shadow: none !important;
+        }
+        
+        .form-control:active,
+        .form-control:enable,
+        .form-control:focus {
+            border-left: none !important;
+            box-shadow: none !important;
+        }
+        
+        #nameForm:after {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 8px solid azure;
+            border-right: 8px solid transparent;
+            top: 34px;
+            right: -8px
+        }
+        
+        #passForm:after {
+            display: block;
+            content: no-close-quote;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 8px solid azure;
+            border-right: 8px solid transparent;
+            top: 34px;
+            right: -8px
+        }
+        
+        #check {
+            font-size: 11px;
+            color: gray;
+            margin-top: 10px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: grey;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+        a:hover {
+            color: darkgray
+        }
+        
+        .head {
+            margin-top: 18px;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px black;
+        }
+        
+        .main_2 {
+            height: 100%;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        
+        .hide {
+            display: none;
+            opacity: 0;
+        }
+        
+        .show {
+            display: block;
+        }
+    </style>
+    <style type="text/css">
+        /*media*/
+        
+        @media screen and (min-width: 1200px) {
+            .head {
+                width: 200px;
+            }
+        }
+        
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            #name,
+            #pass {
+                font-size: 14px;
+            }
+            #name:before,
+            #pass:before {
+                top: 30px;
+            }
+            #inputName,
+            #inputPass {
+                width: 227px;
+                left: -25px
+            }
+            .join {
+                font-size: 11px
+            }
+            .login {
+                font-size: 20px;
+                margin-left: 10px;
+            }
+            .head {
+                width: 130px;
+            }
+        }
+        
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            .main {
+                margin-top: 100px
+            }
+            #name,
+            #pass {
+                width: 100%;
+                left: 0px;
+            }
+            #name:after,
+            #pass:after,
+            #name:before,
+            #pass:before {
+                display: none;
+            }
+            .form-control {
+                width: 240px;
+                left: -15px;
+                margin-top: 10px;
+            }
+            #nameForm:after,
+            #passForm:after {
+                display: none;
+            }
+            .login {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+            .join {
+                font-size: 10px
+            }
+            #check {
+                font-size: 10px;
+            }
+            .control-label {
+                margin-left: 56px
+            }
+            .head {
+                width: 120px;
+            }
+        }
+        
+        @media screen and (min-width:440px) and (max-width: 767px) {
+            .main {
+                margin-top: 100px;
+                width: 240px;
+            }
+            #name,
+            #pass {
+                width: 100%;
+                left: 0px;
+            }
+            #name:after,
+            #pass:after,
+            #name:before,
+            #pass:before {
+                display: none;
+            }
+            .form-control {
+                width: 240px;
+                left: -15px;
+                margin-top: 10px;
+            }
+            #nameForm:after,
+            #passForm:after {
+                display: none;
+            }
+            .login {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+            .join {
+                font-size: 10px
+            }
+            #check {
+                font-size: 10px;
+            }
+            .control-label {
+                margin-left: 25%;
+            }
+            #name,
+            #pass {
+                height: 20px;
+            }
+            .head {
+                width: 110px;
+                font-size: 13px
+            }
+        }
+        
+        @media screen and (min-width:250px) and (max-width: 439px) {
+            .main {
+                width: 200px;
+                margin-top: 40px;
+                margin-left: 15%;
+            }
+            #name,
+            #pass {
+                width: 100%;
+                left: 0px;
+            }
+            #name:after,
+            #pass:after,
+            #name:before,
+            #pass:before {
+                display: none;
+            }
+            .form-control {
+                width: 117%;
+                left: -15px;
+                margin-top: 10px;
+            }
+            #nameForm:after,
+            #passForm:after {
+                display: none;
+            }
+            .login {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+            .join {
+                font-size: 10px
+            }
+            #check {
+                font-size: 10px;
+            }
+            .control-label {
+                margin-left: 25%;
+            }
+            #name,
+            #pass {
+                height: 20px;
+            }
+            .head {
+                width: 95px;
+                font-size: 11.5px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+        <div class="row col-md-5 col-lg-5 col-sm-5 col-xs-12">
+            <button class="btn head reg col-md-5 col-lg-5 col-sm-5 col-xs-5">Registration</button>
+            <button class="btn head list col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 col-sm-offset-1 col-sm-5 col-xs-offset-1 col-xs-5">Users list</button>
+        </div>
+    </header>
+       <div class="form-horizontal">
+
+        <div class="container">
+            <div class="row main col-md-offset-4 col-md-4 col-md-offset-4 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-4">
+
+
+                <div class="row">
+                    <p class="col-md-offset-1 col-md-3  col-sm-3  col-xs-3 login">Login</p>
+                    <p class="col-md-offset-3 col-md-5 col-sm-offset-4 col-sm-5 col-xs-offset-7 join">Join us now <span class="free">for free!</span></p>
+                </div>
+                <div class="form-group">
+                    <div id="name" class="col-md-4 col-sm-12 col-xs-12">
+                        <label for="inputName" class="control-label">USERNAME</label>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12" id="nameForm">
+                        <input type="text" class="form-control" id="inputName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div id="pass" class=" col-md-4 col-sm-12 col-xs-12">
+                        <label for="inputPass" class="control-label">PASSWORD</label>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12" id="passForm">
+                        <input type="password" class="form-control" id="inputPass" required>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="checkbox" class="col-md-5 col-sm-5 col-xs-5" id="check">
+                        <!--  <input type="checkbox" id="checkbox"> Remember me?-->
+                    </label>
+                    <a href="#" class="user-mess hide col-md-offset-2 col-md-5 col-sm-offset-2 col-sm-5 col-xs-offset-2 col-xs-5"> User saved! </a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="send" class="btn col-md-12 col-sm-12 col-xs-12">ADD TO LIST</button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container hide main_2 col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10
+    col-xs-offset-1 col-xs-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Name:</td>
+                    <td>Password:</td>
+                    <td>Control:</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+
+            var reg_btn = $('.reg')
+                , list_btn = $('.list');
+
+            var reg_w = $('.main')
+                , list_w = $('.main_2');
+
+            function togglePages(btn, window_show, window_hide) {
+                btn.on('click', function () {
+                    window_show.removeClass('hide');
+                    window_show.animate({
+                        'opacity': '1'
+                    }, 500);
+                    window_hide.animate({
+                        'opacity': '0'
+                    }, 500);
+                    window_hide.addClass('hide');
+                });
+            }
+
+            togglePages(reg_btn, reg_w, list_w);
+            togglePages(list_btn, list_w, reg_w);
+
+            $('#send').on('click', function () {
+
+                var name = $('#inputName');
+                var pass = $('#inputPass');
+
+                $('input').each(function () {
+                    if ($(this).val().length == 0) {
+                        $(this).closest('.form-group').find('div label').addClass('err-txt');
+                    } else {
+                        $(this).closest('.form-group').find('div label').removeClass('err-txt');
+                    }
+                });
+
+
+                if ($('label').hasClass('err-txt')) {
+                    console.log('has class error');
+                } else {
+                    console.log('ok');
+                    var u_data = {
+                        "id": Math.random().toString(36).split('.')[1]
+                        , "name": name.val()
+                        , "password": pass.val()
+                    };
+                    $.ajax({
+                        method: 'POST'
+                        , url: 'https://test-andrey2393.c9users.io/'
+                        , data: u_data
+                        , error: function (e) {
+                            console.log('error ! ', e);
+                        }
+                    , })
+
+                    name.val('');
+                    pass.val('');
+
+                    $('.user-mess').removeClass('hide');
+                    setTimeout(function () {
+                        $('.user-mess').addClass('hide');
+                    }, 3000);
+                }
+
+
+            });
+
+            list_btn.on('click', function () {
+                var t_body = $('tbody');
+                t_body.empty();
+                $.ajax({
+                    method: 'GET'
+                    , url: 'https://test-andrey2393.c9users.io/'
+                    , success: function (data) {
+                        var tpl = '';
+                        for (i in data) {
+                            tpl += '<tr data-id=' + data[i].id + '><td>' + data[i].name + '</td><td>' + data[i].password + '</td><td><button class="btn">Delete user</button></td></tr>';
+                        }
+                        t_body.append(tpl);
+                        
+                    }
+                });
+            })
+
+        });
+    </script>
+</body>
+
+</html>
